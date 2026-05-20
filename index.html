@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App | Samuel Licht</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1> Weather App</h1>
+      <p>Consulta el clima de cualquier ciudad.</p>
+    </header>
+
+    <div class="search-area">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Escribe una ciudad..."
+      />
+      <button id="search-btn">Buscar</button>
+    </div>
+
+    <div id="error-msg" class="error-msg hidden">
+      Ciudad no encontrada. Intenta de nuevo.
+    </div>
+
+    <div id="weather-card" class="weather-card hidden">
+
+      <div class="weather-main">
+        <img id="weather-icon" src="" alt="Icono del clima" />
+        <div>
+          <h2 id="city-name"></h2>
+          <p id="weather-desc"></p>
+        </div>
+      </div>
+
+      <div class="weather-temp">
+        <span id="temp-main"></span>
+      </div>
+
+      <div class="weather-details">
+        <div class="detail">
+          <span class="detail-label">Sensación</span>
+          <span id="feels-like"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Humedad</span>
+          <span id="humidity"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Viento</span>
+          <span id="wind"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Mínima</span>
+          <span id="temp-min"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Máxima</span>
+          <span id="temp-max"></span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Visibilidad</span>
+          <span id="visibility"></span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(31, 111, 235, 0.35), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(137, 87, 229, 0.35), transparent 40%),
+    #0d1117;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(22, 27, 34, 0.95);
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #8b949e;
+  font-size: 15px;
+}
+
+/* ── Búsqueda ── */
+.search-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-area input {
+  flex: 1;
+  padding: 13px 16px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-area input:focus {
+  border-color: #58a6ff;
+}
+
+.search-area input::placeholder {
+  color: #484f58;
+}
+
+.search-area button {
+  padding: 13px 20px;
+  background: #238636;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.search-area button:hover {
+  background: #2ea043;
+  transform: translateY(-2px);
+}
+
+/* ── Error ── */
+.error-msg {
+  text-align: center;
+  color: #f85149;
+  background: rgba(248, 81, 73, 0.1);
+  border: 1px solid rgba(248, 81, 73, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ── Tarjeta del clima ── */
+.weather-card {
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.weather-main img {
+  width: 72px;
+  height: 72px;
+}
+
+.weather-main h2 {
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.weather-main p {
+  color: #8b949e;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.weather-temp {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+}
+
+#temp-main {
+  font-size: 72px;
+  font-weight: bold;
+  color: #58a6ff;
+}
+
+/* ── Detalles ── */
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.detail {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail span:last-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #c9d1d9;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .container {
+    padding: 24px 18px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .search-area {
+    flex-direction: column;
+  }
+
+  .search-area button {
+    width: 100%;
+  }
+
+  #temp-main {
+    font-size: 56px;
+  }
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
